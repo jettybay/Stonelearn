@@ -1,0 +1,20 @@
+import type { LucideIcon } from "lucide-react";
+
+export function FeatureCard({
+  icon: Icon,
+  title,
+  description,
+}: {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="rounded-3xl bg-white p-8 shadow-sm">
+      <Icon className="mb-4 text-[#722F37]" size={40} />
+      <h3 className="text-xl font-semibold">{title}</h3>
+      <p className="mt-3 text-gray-600">{description}</p>
+    </div>
+  );
+}
+
