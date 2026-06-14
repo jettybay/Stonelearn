@@ -1,288 +1,213 @@
+"use client";
+
+import { motion } from "framer-motion";
 import {
-  BookOpen,
-  Palette,
-  Award,
+  ArrowRight,
+  ShieldCheck,
+  Users,
+  BarChart3,
+  CheckCircle2,
 } from "lucide-react";
 
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
+import { NavbarLanding } from "@/components/navbar/navbarLanding";
 
-import { SectionHeader } from "@/components/section-header";
-import { FeatureCard } from "@/components/feature-card";
-import { DashboardPreview } from "@/components/dashboard-preview";
-import { BrandingSwitcher } from "@/components/branding-switcher";
-import { PricingCard } from "@/components/pricing-card";
-import { FAQItem } from "@/components/faq-item";
-import { AnimatedCounter } from "@/components/animated-counter";
-
-import { FadeIn } from "@/components/motion/fade-in";
-
-export default function HomePage() {
+export default function Page() {
   return (
-    <main className="bg-white">
+    <main className="overflow-hidden bg-white">
+      <NavbarLanding />
+      {/* Hero */}
+      <section className="relative min-h-screen flex items-center">
+        {/* Background */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-[-200px] right-[-200px] w-[700px] h-[700px] rounded-full bg-[#722F37]/10 blur-3xl" />
 
-      <Navbar />
+          <div className="absolute bottom-[-150px] left-[-150px] w-[500px] h-[500px] rounded-full bg-[#722F37]/5 blur-3xl" />
+        </div>
 
-      {/* HERO */}
-
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(114,47,55,.15),transparent_60%)]" />
-
-        <div className="relative mx-auto max-w-7xl px-6 py-24 lg:py-32">
-
-          <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
-
-            <div>
-
-              <span className="rounded-full bg-[#F7EDEE] px-4 py-2 text-sm font-semibold text-[#722F37]">
-                Multi-Tenant Learning Platform
-              </span>
-
-              <h1 className="mt-6 text-5xl font-extrabold leading-tight tracking-tight lg:text-7xl">
-                The Learning Platform Built For Modern Schools
-              </h1>
-
-              <p className="mt-6 max-w-xl text-lg text-gray-600">
-                Launch a fully branded LMS for your school.
-                Manage students, teachers, courses, quizzes,
-                certificates and analytics from one platform.
-              </p>
-
-              <div className="mt-10 flex flex-wrap gap-4">
-
-                <button className="rounded-xl bg-[#722F37] px-8 py-4 font-semibold text-white">
-                  Start Free Trial
-                </button>
-
-                <button className="rounded-xl border px-8 py-4 font-semibold">
-                  Watch Demo
-                </button>
-
+        <div className="container mx-auto px-6 lg:px-16 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* LEFT */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+            >
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#722F37]/10 text-[#722F37] font-medium mb-8">
+                <CheckCircle2 size={16} />
+                Trusted by 500+ Businesses
               </div>
 
-            </div>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#111111] leading-tight">
+                Grow your
+                <span className="block text-[#722F37]">
+                  business smarter
+                </span>
+                with modern ERP
+              </h1>
 
-            <DashboardPreview />
+              <p className="mt-8 text-lg text-gray-600 max-w-xl leading-relaxed">
+                Streamline operations, manage finances, track inventory,
+                automate workflows, and gain real-time insights from a single
+                platform built for ambitious companies.
+              </p>
 
+              {/* Buttons */}
+              <div className="flex flex-wrap gap-4 mt-10">
+                <button className="bg-[#722F37] hover:bg-[#5f262d] transition text-white px-8 py-4 rounded-xl font-semibold flex items-center gap-2">
+                  Get Started
+                  <ArrowRight size={18} />
+                </button>
+
+                <button className="border border-gray-300 px-8 py-4 rounded-xl font-semibold text-[#111111] hover:bg-gray-50 transition">
+                  Book Demo
+                </button>
+              </div>
+
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-8 mt-14">
+                <div>
+                  <h3 className="text-3xl font-bold text-[#111111]">
+                    15K+
+                  </h3>
+                  <p className="text-gray-500">Active Users</p>
+                </div>
+
+                <div>
+                  <h3 className="text-3xl font-bold text-[#111111]">
+                    99.9%
+                  </h3>
+                  <p className="text-gray-500">System Uptime</p>
+                </div>
+
+                <div>
+                  <h3 className="text-3xl font-bold text-[#111111]">
+                    500+
+                  </h3>
+                  <p className="text-gray-500">Companies</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* RIGHT */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              {/* Floating Card 1 */}
+              <motion.div
+                animate={{ y: [0, -12, 0] }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 5,
+                }}
+                className="absolute -top-10 -left-10 bg-white shadow-2xl rounded-3xl p-5 border z-20"
+              >
+                <div className="flex items-center gap-4">
+                  <ShieldCheck
+                    className="text-[#722F37]"
+                    size={35}
+                  />
+
+                  <div>
+                    <h4 className="font-semibold">
+                      Enterprise Security
+                    </h4>
+                    <p className="text-sm text-gray-500">
+                      Fully encrypted
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Main Dashboard */}
+              <div className="rounded-[40px] bg-gradient-to-br from-[#722F37] to-[#4f1f26] p-2 shadow-2xl">
+                <div className="bg-white rounded-[35px] p-8">
+                  {/* Top Bar */}
+                  <div className="flex justify-between items-center mb-8">
+                    <h3 className="font-bold text-xl">
+                      Business Overview
+                    </h3>
+
+                    <div className="bg-[#722F37]/10 text-[#722F37] px-4 py-2 rounded-lg text-sm">
+                      Live Data
+                    </div>
+                  </div>
+
+                  {/* Analytics */}
+                  <div className="grid grid-cols-2 gap-5">
+                    <div className="bg-gray-50 p-5 rounded-2xl">
+                      <Users
+                        className="text-[#722F37] mb-3"
+                        size={30}
+                      />
+                      <p className="text-gray-500 text-sm">
+                        Customers
+                      </p>
+                      <h4 className="text-3xl font-bold">
+                        12,845
+                      </h4>
+                    </div>
+
+                    <div className="bg-gray-50 p-5 rounded-2xl">
+                      <BarChart3
+                        className="text-[#722F37] mb-3"
+                        size={30}
+                      />
+                      <p className="text-gray-500 text-sm">
+                        Revenue
+                      </p>
+                      <h4 className="text-3xl font-bold">
+                        $248K
+                      </h4>
+                    </div>
+                  </div>
+
+                  {/* Chart */}
+                  <div className="mt-8 h-48 rounded-2xl bg-gradient-to-r from-[#722F37]/10 to-[#722F37]/20 flex items-end p-6 gap-3">
+                    {[40, 60, 90, 55, 110, 130, 160].map(
+                      (height, index) => (
+                        <div
+                          key={index}
+                          className="bg-[#722F37] rounded-md flex-1"
+                          style={{ height }}
+                        />
+                      )
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating Card 2 */}
+              <motion.div
+                animate={{ y: [0, 10, 0] }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 4,
+                }}
+                className="absolute -bottom-10 right-0 bg-white border shadow-xl rounded-2xl px-6 py-4"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-[#722F37]/10 flex items-center justify-center">
+                    📈
+                  </div>
+
+                  <div>
+                    <h4 className="font-bold text-lg">
+                      +38%
+                    </h4>
+                    <p className="text-gray-500 text-sm">
+                      Revenue Growth
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
-
-      {/* STATS */}
-
-      <section className="border-y bg-gray-50 py-16">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-6 md:grid-cols-4">
-
-          <div className="text-center">
-            <AnimatedCounter value={100} suffix="+" />
-            <p className="mt-2 text-gray-500">Schools</p>
-          </div>
-
-          <div className="text-center">
-            <AnimatedCounter value={50000} suffix="+" />
-            <p className="mt-2 text-gray-500">Students</p>
-          </div>
-
-          <div className="text-center">
-            <AnimatedCounter value={5000} suffix="+" />
-            <p className="mt-2 text-gray-500">Courses</p>
-          </div>
-
-          <div className="text-center">
-            <AnimatedCounter value={99} suffix="%" />
-            <p className="mt-2 text-gray-500">Completion Rate</p>
-          </div>
-
-        </div>
-      </section>
-
-      {/* FEATURES */}
-
-      <section
-        id="features"
-        className="py-24"
-      >
-        <div className="mx-auto max-w-7xl px-6">
-
-          <SectionHeader
-            kicker="Everything You Need"
-            title="Run Your Entire School Online"
-            description="Stonelearn gives schools all the tools required to manage digital learning."
-          />
-<div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-
-  <FadeIn>
-    <FeatureCard
-      icon={Palette}
-      title="Custom Branding"
-      description="Each school gets its own colors, logo and subdomain."
-    />
-  </FadeIn>
-
-  <FadeIn>
-    <FeatureCard
-      icon={BookOpen}
-      title="Course Management"
-      description="Create lessons, modules and resources."
-    />
-  </FadeIn>
-
-  <FadeIn>
-    <FeatureCard
-      icon={Award}
-      title="Certificates"
-      description="Generate certificates automatically."
-    />
-  </FadeIn>
-
-</div>
-          
-        </div>
-      </section>
-
-      {/* BRANDING */}
-
-      <section className="bg-gray-50 py-24">
-
-        <div className="mx-auto max-w-7xl px-6">
-
-          <SectionHeader
-            kicker="Multi-Tenant Branding"
-            title="Every School Gets Its Own Identity"
-            description="Switch between school themes instantly."
-          />
-
-          <div className="mt-10 flex justify-center">
-            <BrandingSwitcher />
-          </div>
-
-          <div className="mt-12">
-            <DashboardPreview />
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* PRICING */}
-
-      <section
-        id="pricing"
-        className="py-24"
-      >
-        <div className="mx-auto max-w-7xl px-6">
-
-          <SectionHeader
-            kicker="Pricing"
-            title="Simple Pricing For Every Institution"
-          />
-
-          <div className="mt-16 grid gap-8 lg:grid-cols-3">
-
-            <PricingCard
-              name="Starter"
-              price="$29"
-              description="Perfect for small schools."
-              features={[
-                "500 Students",
-                "Custom Branding",
-                "Course Management",
-              ]}
-              cta="Get Started"
-            />
-
-            <PricingCard
-              name="Growth"
-              price="$99"
-              description="Most popular choice."
-              highlighted
-              features={[
-                "Unlimited Students",
-                "Certificates",
-                "Analytics",
-                "Custom Domain",
-              ]}
-              cta="Start Trial"
-            />
-
-            <PricingCard
-              name="Enterprise"
-              price="Custom"
-              description="For large institutions."
-              features={[
-                "White Label",
-                "Dedicated Support",
-                "Advanced Reporting",
-              ]}
-              cta="Contact Sales"
-            />
-
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-
-      <section className="bg-gray-50 py-24">
-
-        <div className="mx-auto max-w-4xl px-6">
-
-          <SectionHeader
-            kicker="FAQ"
-            title="Frequently Asked Questions"
-          />
-
-          <div className="mt-12 space-y-4">
-
-            <FAQItem
-              question="Can I use my own school colors?"
-              answer="Yes. Every school can customize branding."
-            />
-
-            <FAQItem
-              question="Do students receive certificates?"
-              answer="Yes. Certificates can be generated automatically."
-            />
-
-            <FAQItem
-              question="Can teachers upload videos?"
-              answer="Absolutely. Teachers can upload videos and resources."
-            />
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* CTA */}
-
-      <section className="py-24">
-
-        <div className="mx-auto max-w-5xl px-6">
-
-          <div className="rounded-[32px] bg-[#722F37] p-16 text-center text-white">
-
-            <h2 className="text-5xl font-bold">
-              Ready To Launch Your School LMS?
-            </h2>
-
-            <p className="mt-6 text-lg text-white/80">
-              Start building your digital campus today.
-            </p>
-
-            <button className="mt-8 rounded-xl bg-white px-8 py-4 font-semibold text-[#722F37]">
-              Start Free Trial
-            </button>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      <Footer />
-
     </main>
   );
 }
