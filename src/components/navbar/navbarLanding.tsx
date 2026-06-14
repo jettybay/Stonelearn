@@ -5,10 +5,10 @@ import { ChevronDown, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const categories = [
-  { name: "Edutech", href: "/edutech", description: "Scale learning with modern school management tools" },
-  { name: "Fintech", href: "/fintech", description: "Robust payment & banking infrastructure" },
-  { name: "Healthtech", href: "/healthtech", description: "Streamline patient care and clinic operations" },
-  { name: "Ecommerce", href: "/ecommerce", description: "Launch and scale your online retail brand" },
+  { name: "Edutech", href: "/categories/edutech", description: "Scale learning with modern school management tools" },
+  { name: "Fintech", href: "/categories/fintech", description: "Robust payment & banking infrastructure" },
+  { name: "Healthtech", href: "/categories/healthtech", description: "Streamline patient care and clinic operations" },
+  { name: "Ecommerce", href: "/categories/ecommerce", description: "Launch and scale your online retail brand" },
 ];
 
 export function NavbarLanding() {
@@ -54,11 +54,6 @@ export function NavbarLanding() {
 
             {isOpen && (
               <div className="absolute left-0 top-full mt-4 w-80 rounded-[28px] border border-gray-100 bg-white p-4 shadow-2xl z-50 animate-in fade-in zoom-in-95 slide-in-from-top-2 duration-200">
-                <div className="mb-2 px-4 py-2">
-                  <p className="text-[11px] font-bold uppercase tracking-widest text-gray-400">
-                    Industry Solutions
-                  </p>
-                </div>
                 <div className="grid gap-2">
                   {categories.map((cat) => (
                     <Link
