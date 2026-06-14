@@ -1,20 +1,9 @@
-# TODO - Fix landing page misconfiguration
+# TODO
+- [ ] Create app routes for /categories/[slug] (or move existing pages into app/) so Next.js can render them instead of 404.
+- [ ] Fix navbar links to match the actual route paths.
+- [ ] Confirm Next.js app router is used: ensure folders live under `app/categories/...` not `src/categories/...`.
 
-## Plan
-- Identify why `/` still shows default Next.js page.
-- Remove/merge conflicting route definitions between `app/` and `src/app/`.
-- Align root layout/metadata with landing implementation.
-- Restart dev server and verify `/` renders intended landing.
+- [x] Fix TypeScript build error in src/components/navbar/navbarLanding.tsx (remove unused React import).
 
-## Steps
-- [x] Inspect `src/app/page.tsx` (confirmed landing components)
-- [x] Inspect root `app/page.tsx` (confirmed it’s still the default template)
-- [x] Inspect `app/layout.tsx` and `src/app/layout.tsx` (confirmed duplicated layouts/metadata)
-- [x] Root `app/*` route files are conflicting with `src/app/*` (root `app/page.tsx` is default template)
-- [x] Restore root `app/*` so Next routes work again (landing rendered from root)
-
-
-- [ ] Run `npm run dev` and verify `/` renders `src/app/page.tsx`
-- [ ] Run `npm run build` (optional) to confirm no routing issues
-
+- [ ] Run `npm run build` and verify routes load.
 
