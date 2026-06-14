@@ -8,12 +8,61 @@ export function Navbar() {
   const [isFeaturesOpen, setIsFeaturesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const categories = [
-    { name: "Edutech", href: "/categories/edutech" },
-    { name: "Fintech", href: "/categories/fintech" },
-    { name: "Healthtech", href: "/categories/healthtech" },
-    { name: "E-commerce", href: "/categories/ecommerce" },
-  ];
+  // Dynamic dropdown items based on current route
+  // (category landing pages)
+  // Note: using "wine" primary color for dropdown text.
+  const pathname = typeof window !== "undefined" ? window.location.pathname : "";
+
+  const featureItems = (() => {
+    if (pathname.includes("/categories/edutech")) {
+      return ["Schools", "CBT", "Quizzes", "Examinations"].map((label) => ({
+        label,
+        href: pathname,
+      }));
+    }
+
+    if (pathname.includes("/categories/ecommerce")) {
+      return ["Mall", "Supermarket", "Store"].map((label) => ({
+        label,
+        href: pathname,
+      }));
+    }
+
+    if (pathname.includes("/categories/healthtech")) {
+      return ["Hospital", "Pharmacy", "Laboratory", "Fitness"].map((label) => ({
+        label,
+        href: pathname,
+      }));
+    }
+
+    if (pathname.includes("/categories/fintech")) {
+      return [
+        "Regular Finance",
+        "Micro-finance",
+        "Co-operative",
+        "Audit",
+        "Payment management",
+        "e-Ticket",
+      ].map((label) => ({
+        label,
+        href: pathname,
+      }));
+    }
+
+    // Fallback (when not on category pages)
+    return [
+      { label: "Edutech", href: "/categories/edutech" },
+      { label: "Fintech", href: "/categories/fintech" },
+      { label: "Healthtech", href: "/categories/healthtech" },
+      { label: "E-commerce", href: "/categories/ecommerce" },
+    ];
+  })();
+
+
+
+
+
+
 
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
@@ -44,13 +93,15 @@ export function Navbar() {
                   exit={{ opacity: 0, y: 10 }}
                   className="absolute left-0 top-[calc(100%-10px)] w-48 rounded-xl bg-white border shadow-xl py-2 z-50"
                 >
-                  {categories.map((cat) => (
-                    <Link 
-                      key={cat.href} 
-                      href={cat.href}
-                      className="block px-4 py-2.5 text-sm font-medium hover:bg-gray-50 hover:text-[#722F37] transition-colors"
+                  {featureItems.map((item) => (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      className="block px-4 py-2.5 text-sm font-medium transition-colors"
+                      style={{ color: "#722F37" }}
+                      onClick={() => setIsFeaturesOpen(false)}
                     >
-                      {cat.name}
+                      {item.label}
                     </Link>
                   ))}
                 </motion.div>
@@ -103,14 +154,15 @@ export function Navbar() {
                       exit={{ opacity: 0, height: 0 }}
                       className="pl-4 space-y-1 overflow-hidden"
                     >
-                      {categories.map((cat) => (
-                        <Link 
-                          key={cat.href} 
-                          href={cat.href}
-                          className="block py-2 text-sm text-gray-600 hover:text-[#722F37]"
+                      {featureItems.map((item) => (
+                        <Link
+                          key={item.label}
+                          href={item.href}
+                          className="block py-2 text-sm transition-colors"
+                          style={{ color: "#722F37" }}
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
-                          {cat.name}
+                          {item.label}
                         </Link>
                       ))}
                     </motion.div>
