@@ -1,9 +1,16 @@
 # TODO
-- [ ] Create app routes for /categories/[slug] (or move existing pages into app/) so Next.js can render them instead of 404.
-- [ ] Fix navbar links to match the actual route paths.
-- [ ] Confirm Next.js app router is used: ensure folders live under `app/categories/...` not `src/categories/...`.
 
-- [x] Fix TypeScript build error in src/components/navbar/navbarLanding.tsx (remove unused React import).
-
-- [ ] Run `npm run build` and verify routes load.
+- [x] Gathered repo context by reading key files that contain gray text classes.
+- [ ] Replace low-contrast gray text classes with `#722F37` or `black`.
+  - Files to update (pending):
+    - src/components/footer/index.tsx
+    - src/components/feature-card/index.tsx
+    - src/components/section-header/index.tsx
+    - src/components/navbar/navbarLanding.tsx
+    - src/components/navbar/index.tsx
+    - src/components/faq-item/index.tsx
+    - src/components/pricing-card/index.tsx
+    - src/stats.tsx
+    - src/features.tsx
+- [ ] Run build/lint (if available) to ensure no errors.
 

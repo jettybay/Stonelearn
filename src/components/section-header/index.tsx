@@ -20,7 +20,7 @@ export function SectionHeader({
         {title}
       </h2>
       {description ? (
-        <div className="mt-4 text-lg leading-8 text-gray-600">{description}</div>
+        <div className="mt-4 text-lg leading-8 text-black">{description}</div>
       ) : null}
     </div>
   );

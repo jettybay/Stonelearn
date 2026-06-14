@@ -59,17 +59,12 @@ export function Navbar() {
   })();
 
 
-
-
-
-
-
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-3">
           <div className="h-9 w-9 rounded-xl bg-[#722F37]" />
-          <span className="text-xl font-bold">
+          <span className="text-xl font-bold text-[#722F37]">
             Stonelearn
           </span>
         </Link>
@@ -80,7 +75,7 @@ export function Navbar() {
             onMouseEnter={() => setIsFeaturesOpen(true)}
             onMouseLeave={() => setIsFeaturesOpen(false)}
           >
-            <button className="flex items-center gap-1 hover:text-[#722F37] transition-colors py-2 font-medium">
+            <button className="flex items-center gap-1 text-[#722F37] transition-colors py-2 font-medium">
               Features
               <ChevronDown size={14} className={`transition-transform duration-200 ${isFeaturesOpen ? 'rotate-180' : ''}`} />
             </button>
@@ -108,9 +103,9 @@ export function Navbar() {
               )}
             </AnimatePresence>
           </div>
-          <a href="#how-it-works">How It Works</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#contact">Contact</a>
+          <a href="#how-it-works" className="text-[#722F37] font-medium transition-colors">How It Works</a>
+          <a href="#pricing" className="text-[#722F37] font-medium transition-colors">Pricing</a>
+          <a href="#contact" className="text-[#722F37] font-medium transition-colors">Contact</a>
         </nav>
 
         <div className="flex items-center gap-3">
@@ -119,7 +114,7 @@ export function Navbar() {
           </button>
           <button 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"
+            className="md:hidden p-2 text-black hover:bg-gray-100 rounded-lg transition-colors"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -140,7 +135,7 @@ export function Navbar() {
               <div className="space-y-1">
                 <button 
                   onClick={() => setIsFeaturesOpen(!isFeaturesOpen)}
-                  className="flex w-full items-center justify-between py-2 font-medium text-left hover:text-[#722F37] transition-colors"
+                  className="flex w-full items-center justify-between py-2 font-medium text-left text-[#722F37] transition-colors"
                 >
                   Features
                   <ChevronDown size={16} className={`transition-transform duration-200 ${isFeaturesOpen ? 'rotate-180' : ''}`} />
@@ -169,9 +164,9 @@ export function Navbar() {
                   )}
                 </AnimatePresence>
               </div>
-              <a href="#how-it-works" className="py-2 font-medium hover:text-[#722F37] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>How It Works</a>
-              <a href="#pricing" className="py-2 font-medium hover:text-[#722F37] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Pricing</a>
-              <a href="#contact" className="py-2 font-medium hover:text-[#722F37] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
+              <a href="#how-it-works" className="py-2 font-medium text-[#722F37] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>How It Works</a>
+              <a href="#pricing" className="py-2 font-medium text-[#722F37] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Pricing</a>
+              <a href="#contact" className="py-2 font-medium text-[#722F37] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
               <div className="pt-4">
                 <button className="w-full rounded-xl bg-[#722F37] text-white px-5 py-3 font-medium active:scale-95 transition-transform">
                   Login

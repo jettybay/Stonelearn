@@ -23,7 +23,7 @@ export function PricingCard({
       <div className="flex items-start justify-between gap-4">
         <div>
           <h3 className="text-xl font-bold">{name}</h3>
-          <p className="mt-2 text-gray-600">{description}</p>
+          <p className="mt-2 text-black">{description}</p>
         </div>
         {highlighted ? (
           <span className="rounded-full bg-[#722F37] px-3 py-1 text-xs font-semibold text-white">

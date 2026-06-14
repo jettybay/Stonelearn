@@ -34,16 +34,14 @@ export function NavbarLanding() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         <div className="flex items-center gap-3">
           <div className="h-9 w-9 rounded-xl bg-[#722F37]" />
-          <span className="text-xl font-bold">Stonelearn</span>
+          <span className="text-xl font-bold text-[#722F37]">Stonelearn</span>
         </div>
 
         <nav className="hidden md:flex items-center gap-8">
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`flex items-center gap-1 font-medium transition-colors py-2 focus:outline-none ${
-                isOpen ? "text-[#722F37]" : "text-gray-600 hover:text-[#722F37]"
-              }`}
+              className="flex items-center gap-1 font-medium transition-colors py-2 focus:outline-none text-[#722F37]"
             >
               Categories
               <ChevronDown
@@ -62,13 +60,13 @@ export function NavbarLanding() {
                       key={cat.name}
                       href={cat.href}
                       onClick={() => setIsOpen(false)}
-                      className="group flex items-center justify-between rounded-2xl px-4 py-4 text-gray-700 hover:bg-[#722F37]/5 hover:text-[#722F37] transition-all duration-200"
+                      className="group flex items-center justify-between rounded-2xl px-4 py-4 text-[#722F37] hover:bg-[#722F37]/5 transition-all duration-200"
                     >
                       <div className="flex-1">
                         <h4 className="text-base font-bold leading-none">
                           {cat.name}
                         </h4>
-                        <p className="mt-2 text-xs text-gray-500 group-hover:text-[#722F37]/70 transition-colors">
+                        <p className="mt-2 text-xs text-[#722F37]/70 transition-colors">
                           {cat.description}
                         </p>
                       </div>
@@ -83,7 +81,7 @@ export function NavbarLanding() {
 
         <div className="flex items-center gap-3">
           <div className="hidden md:flex gap-3">
-            <button className="rounded-xl border px-5 py-2 hover:bg-gray-50 transition">
+            <button className="rounded-xl border border-[#722F37]/20 px-5 py-2 text-[#722F37] hover:bg-gray-50 transition">
               Login
             </button>
           </div>
@@ -91,7 +89,7 @@ export function NavbarLanding() {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-gray-600 hover:bg-gray-100 rounded-xl transition"
+            className="md:hidden p-2 text-black hover:bg-gray-100 rounded-xl transition"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -109,7 +107,7 @@ export function NavbarLanding() {
           >
             <div className="flex flex-col gap-8 p-6">
               <div className="flex flex-col gap-4">
-                <p className="text-xs font-bold uppercase tracking-wider text-gray-400 px-2">
+                <p className="text-xs font-bold uppercase tracking-wider text-[#722F37]/60 px-2">
                   Categories
                 </p>
                 <div className="grid gap-2">
@@ -118,12 +116,12 @@ export function NavbarLanding() {
                       key={cat.name}
                       href={cat.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="group flex flex-col gap-1 rounded-2xl px-4 py-4 hover:bg-[#722F37]/5"
+                      className="group flex flex-col gap-1 rounded-2xl px-4 py-4 text-[#722F37] hover:bg-[#722F37]/5"
                     >
-                      <span className="font-bold text-gray-900 group-hover:text-[#722F37] transition-colors">
+                      <span className="font-bold transition-colors">
                         {cat.name}
                       </span>
-                      <span className="text-xs text-gray-500">
+                      <span className="text-xs text-[#722F37]/70">
                         {cat.description}
                       </span>
                     </Link>
@@ -132,7 +130,7 @@ export function NavbarLanding() {
               </div>
 
               <div className="flex flex-col gap-3 border-t pt-6">
-                <button className="w-full rounded-xl border border-gray-200 py-4 font-bold text-[#111111]">
+                <button className="w-full rounded-xl border border-[#722F37]/20 py-4 font-bold text-[#722F37]">
                   Login
                 </button>
                 <button className="w-full rounded-xl bg-[#722F37] py-4 font-bold text-white shadow-lg shadow-[#722F37]/20">
