@@ -1,14 +1,14 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const categories = [
-  { name: "Edutech", href: "/edutech" },
-  { name: "Fintech", href: "/fintech" },
-  { name: "Healthtech", href: "/healthtech" },
-  { name: "Ecommerce", href: "/ecommerce" },
+  { name: "Edutech", href: "/edutech", description: "Scale learning with modern school management tools" },
+  { name: "Fintech", href: "/fintech", description: "Robust payment & banking infrastructure" },
+  { name: "Healthtech", href: "/healthtech", description: "Streamline patient care and clinic operations" },
+  { name: "Ecommerce", href: "/ecommerce", description: "Launch and scale your online retail brand" },
 ];
 
 export function NavbarLanding() {
@@ -39,7 +39,9 @@ export function NavbarLanding() {
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="flex items-center gap-1 font-medium text-gray-600 hover:text-[#722F37] transition-colors py-2 focus:outline-none"
+              className={`flex items-center gap-1 font-medium transition-colors py-2 focus:outline-none ${
+                isOpen ? "text-[#722F37]" : "text-gray-600 hover:text-[#722F37]"
+              }`}
             >
               Categories
               <ChevronDown
@@ -51,17 +53,32 @@ export function NavbarLanding() {
             </button>
 
             {isOpen && (
-              <div className="absolute left-0 top-full mt-1 w-48 rounded-xl border bg-white p-2 shadow-xl z-50 animate-in fade-in zoom-in-95 duration-200">
-                {categories.map((cat) => (
-                  <Link
-                    key={cat.name}
-                    href={cat.href}
-                    onClick={() => setIsOpen(false)}
-                    className="block rounded-lg px-4 py-2.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#722F37] transition-colors"
-                  >
-                    {cat.name}
-                  </Link>
-                ))}
+              <div className="absolute left-0 top-full mt-4 w-80 rounded-[28px] border border-gray-100 bg-white p-4 shadow-2xl z-50 animate-in fade-in zoom-in-95 slide-in-from-top-2 duration-200">
+                <div className="mb-2 px-4 py-2">
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-gray-400">
+                    Industry Solutions
+                  </p>
+                </div>
+                <div className="grid gap-2">
+                  {categories.map((cat) => (
+                    <Link
+                      key={cat.name}
+                      href={cat.href}
+                      onClick={() => setIsOpen(false)}
+                      className="group flex items-center justify-between rounded-2xl px-4 py-4 text-gray-700 hover:bg-[#722F37]/5 hover:text-[#722F37] transition-all duration-200"
+                    >
+                      <div className="flex-1">
+                        <h4 className="text-base font-bold leading-none">
+                          {cat.name}
+                        </h4>
+                        <p className="mt-2 text-xs text-gray-500 group-hover:text-[#722F37]/70 transition-colors">
+                          {cat.description}
+                        </p>
+                      </div>
+                      <ArrowRight size={18} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                    </Link>
+                  ))}
+                </div>
               </div>
             )}
           </div>
