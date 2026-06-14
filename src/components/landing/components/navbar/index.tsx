@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 import { MobileMenu } from "./mobile-menu";
 
 export function Navbar() {
@@ -25,9 +25,7 @@ export function Navbar() {
             Get Started
           </button>
 
-          <div className="md:hidden">
-         <MobileMenu />
-          </div>
+          <MobileMenu />
 
           
         </div>
