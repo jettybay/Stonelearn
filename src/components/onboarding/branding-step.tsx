@@ -1,0 +1,39 @@
+"use client";
+
+
+
+export function BrandingStep() {
+  return (
+    <section className="space-y-6">
+      <div>
+        <h2 className="text-xl font-bold text-black">Branding</h2>
+        <p className="mt-1 text-sm text-black/60">Set a primary color and UI style for your workspace.</p>
+      </div>
+
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <label className="space-y-2">
+          <span className="text-sm font-medium text-black/80">Primary color</span>
+          <input
+            type="color"
+            defaultValue="#722F37"
+            className="h-12 w-full cursor-pointer rounded-xl border border-black/10 bg-white p-1"
+          />
+        </label>
+
+        <div className="rounded-2xl border border-black/10 bg-white p-4">
+          <div className="text-sm font-semibold text-black">Button preview</div>
+          <div className="mt-3">
+            <button className="rounded-xl bg-[#722F37] px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[#722F37]/20">
+              Continue
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className="rounded-2xl border border-black/10 bg-black/[0.02] p-4 text-sm text-black/70">
+        Your branding settings will be applied across the onboarding flow and admin UI.
+      </div>
+    </section>
+  );
+}
+
