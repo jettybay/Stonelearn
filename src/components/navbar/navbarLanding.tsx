@@ -84,6 +84,9 @@ export function NavbarLanding() {
             <button className="rounded-xl border border-[#722F37]/20 px-5 py-2 text-[#722F37] hover:bg-gray-50 transition">
               Login
             </button>
+            <button className="rounded-xl bg-[#722F37] px-6 py-2 text-white hover:bg-[#722F37]/90 transition">
+              Get Started
+            </button>
           </div>
 
           {/* Mobile Menu Toggle */}
