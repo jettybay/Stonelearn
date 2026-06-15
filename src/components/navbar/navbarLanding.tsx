@@ -84,9 +84,12 @@ export function NavbarLanding() {
             <button className="rounded-xl border border-[#722F37]/20 px-5 py-2 text-[#722F37] hover:bg-gray-50 transition">
               Login
             </button>
-            <button className="rounded-xl bg-[#722F37] px-6 py-2 text-white hover:bg-[#722F37]/90 transition">
+            <Link 
+              href="/Auth/Signup"
+              className="rounded-xl bg-[#722F37] px-6 py-2 text-white hover:bg-[#722F37]/90 transition text-center"
+            >
               Get Started
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -136,9 +139,13 @@ export function NavbarLanding() {
                 <button className="w-full rounded-xl border border-[#722F37]/20 py-4 font-bold text-[#722F37]">
                   Login
                 </button>
-                <button className="w-full rounded-xl bg-[#722F37] py-4 font-bold text-white shadow-lg shadow-[#722F37]/20">
+                <Link 
+                  href="/Auth/Signup"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="w-full rounded-xl bg-[#722F37] py-4 font-bold text-white shadow-lg shadow-[#722F37]/20 text-center"
+                >
                   Get Started
-                </button>
+                </Link>
               </div>
             </div>
           </motion.div>

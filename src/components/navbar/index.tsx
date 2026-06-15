@@ -113,9 +113,12 @@ export function Navbar() {
             Login
           </button>
           
-          <button className="hidden sm:block rounded-xl bg-[#722F37] px-6 py-2 font-medium text-white hover:bg-[#722F37]/90 transition-all shadow-lg shadow-[#722F37]/20 active:scale-95">
+          <Link 
+            href="/Auth/Signup"
+            className="hidden sm:block rounded-xl bg-[#722F37] px-6 py-2 font-medium text-white hover:bg-[#722F37]/90 transition-all shadow-lg shadow-[#722F37]/20 active:scale-95 text-center"
+          >
             Get Started
-          </button>
+          </Link>
 
 
           <button 
@@ -177,9 +180,13 @@ export function Navbar() {
                 <button className="w-full rounded-xl border border-[#722F37] py-3.5 font-bold text-[#722F37] active:scale-95 transition-all">
                   Login
                 </button>
-                <button className="w-full rounded-xl bg-[#722F37] py-3.5 font-bold text-white shadow-lg shadow-[#722F37]/20 active:scale-95 transition-all">
+                <Link 
+                  href="/Auth/Signup"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="w-full rounded-xl bg-[#722F37] py-3.5 font-bold text-white shadow-lg shadow-[#722F37]/20 active:scale-95 transition-all text-center"
+                >
                   Get Started
-                </button>
+                </Link>
               </div>
             </div>
           </motion.div>
