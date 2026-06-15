@@ -109,9 +109,15 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <button className="hidden sm:block rounded-xl border px-5 py-2 font-medium hover:bg-gray-50 transition-colors">
+          <button className="hidden sm:block rounded-xl border border-[#722F37] px-5 py-2 font-medium text-[#722F37] hover:bg-[#722F37]/5 transition-colors">
             Login
           </button>
+          
+          <button className="hidden sm:block rounded-xl bg-[#722F37] px-6 py-2 font-medium text-white hover:bg-[#722F37]/90 transition-all shadow-lg shadow-[#722F37]/20 active:scale-95">
+            Get Started
+          </button>
+
+
           <button 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden p-2 text-black hover:bg-gray-100 rounded-lg transition-colors"
@@ -167,9 +173,12 @@ export function Navbar() {
               <a href="#how-it-works" className="py-2 font-medium text-[#722F37] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>How It Works</a>
               <a href="#pricing" className="py-2 font-medium text-[#722F37] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Pricing</a>
               <a href="#contact" className="py-2 font-medium text-[#722F37] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
-              <div className="pt-4">
-                <button className="w-full rounded-xl bg-[#722F37] text-white px-5 py-3 font-medium active:scale-95 transition-transform">
+              <div className="flex flex-col gap-3 pt-4">
+                <button className="w-full rounded-xl border border-[#722F37] py-3.5 font-bold text-[#722F37] active:scale-95 transition-all">
                   Login
+                </button>
+                <button className="w-full rounded-xl bg-[#722F37] py-3.5 font-bold text-white shadow-lg shadow-[#722F37]/20 active:scale-95 transition-all">
+                  Get Started
                 </button>
               </div>
             </div>
