@@ -32,6 +32,16 @@ export default function SigninPage() {
   return (
     <OnboardingLayout stepId={INITIAL_STEP_ID}>
       <RenderStep stepId={INITIAL_STEP_ID} />
+      <p className="mt-6 text-center text-sm text-slate-500">
+        Don{"'"}t have an account?{" "}
+        <a
+          href="/auth/signup"
+          className="font-medium text-[#722F37] hover:underline"
+        >
+          Sign up here
+        </a>
+        .
+      </p>
     </OnboardingLayout>
   );
 }
