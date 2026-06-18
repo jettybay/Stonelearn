@@ -1,8 +1,13 @@
 "use client";
 
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
+type Props = {
+  onBack?: () => void;
+  onNext?: () => void;
+};
 
-export function AdminStep() {
+export function AdminStep({ onBack, onNext }: Props) {
   return (
     <section className="space-y-6">
       <div>
@@ -41,7 +46,27 @@ export function AdminStep() {
       <div className="rounded-2xl border border-black/10 bg-black/[0.02] p-4 text-sm text-black/70">
         You can invite additional admins after the workspace is created.
       </div>
+
+      <div className="flex justify-between gap-3 pt-2">
+        <button
+          onClick={onBack}
+          className="inline-flex items-center gap-2 rounded-2xl border px-5 py-3 font-semibold text-black"
+        >
+          <ChevronLeft size={18} />
+          Back
+        </button>
+
+        <button
+          onClick={onNext}
+          className="inline-flex items-center gap-2 rounded-2xl bg-[#722F37] px-6 py-3 font-semibold text-white"
+        >
+          Continue
+          <ChevronRight size={18} />
+        </button>
+      </div>
     </section>
   );
 }
+
+
 

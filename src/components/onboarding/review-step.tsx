@@ -1,8 +1,12 @@
 "use client";
 
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
+type Props = {
+  onBack?: () => void;
+};
 
-export function ReviewStep() {
+export function ReviewStep({ onBack }: Props) {
   return (
     <section className="space-y-6">
       <div>
@@ -45,14 +49,22 @@ export function ReviewStep() {
       </div>
 
       <div className="flex items-center justify-end gap-3">
-        <button className="rounded-xl border border-black/10 bg-white px-4 py-2.5 text-sm font-semibold text-black/80 hover:bg-black/[0.03]">
+        <button
+          onClick={onBack}
+          className="inline-flex items-center gap-2 rounded-xl border border-black/10 bg-white px-4 py-2.5 text-sm font-semibold text-black/80 hover:bg-black/[0.03]"
+        >
+          <ChevronLeft size={18} />
           Back
         </button>
-        <button className="rounded-xl bg-[#722F37] px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[#722F37]/20 hover:bg-[#722F37]/90">
+
+        <button className="inline-flex items-center gap-2 rounded-xl bg-[#722F37] px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[#722F37]/20 hover:bg-[#722F37]/90">
           Create workspace
+          <ChevronRight size={18} />
         </button>
       </div>
     </section>
   );
 }
+
+
 

@@ -1,16 +1,10 @@
 # TODO
 
-- [x] Gathered repo context by reading key files that contain gray text classes.
-- [ ] Replace low-contrast gray text classes with `#722F37` or `black`.
-  - Files to update (pending):
-    - src/components/footer/index.tsx
-    - src/components/feature-card/index.tsx
-    - src/components/section-header/index.tsx
-    - src/components/navbar/navbarLanding.tsx
-    - src/components/navbar/index.tsx
-    - src/components/faq-item/index.tsx
-    - src/components/pricing-card/index.tsx
-    - src/stats.tsx
-    - src/features.tsx
-- [ ] Run build/lint (if available) to ensure no errors.
+## Onboarding flow updates
+- [x] Update onboarding step ids/types and ONBOARDING_STEPS order to: school-information (school-details) -> subdomain -> branding -> logo -> admin -> review
+- [x] Replace placeholder LogoStep with the requested LogoStep implementation (props onBack?/onNext?)
+- [x] Update onboarding navigation logic in app/Auth/Signup/page.tsx so branding Continue goes to logo (not review) and the full chain works: school-details -> subdomain -> branding -> logo -> admin-details -> review
+- [x] Wire Continue/Back navigation for subdomain, admin, and review steps (add props and buttons)
+- [x] Verify TypeScript/build and that onboarding can advance through all steps
+
 

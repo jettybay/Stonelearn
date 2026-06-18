@@ -1,8 +1,13 @@
 "use client";
 
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
+type Props = {
+  onBack?: () => void;
+  onNext?: () => void;
+};
 
-export function SubdomainStep() {
+export function SubdomainStep({ onBack, onNext }: Props) {
   return (
     <section className="space-y-6">
       <div>
@@ -22,7 +27,9 @@ export function SubdomainStep() {
           />
           <span className="text-sm font-semibold text-black/70">.stonelearn.app</span>
         </div>
-        <div className="text-xs text-black/50">Only letters, numbers, and hyphens are recommended.</div>
+        <div className="text-xs text-black/50">
+          Only letters, numbers, and hyphens are recommended.
+        </div>
       </label>
 
       <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
@@ -38,7 +45,27 @@ export function SubdomainStep() {
           <div className="mt-2 text-sm text-black/60">your-school.stonelearn.app</div>
         </div>
       </div>
+
+      <div className="flex justify-between gap-3 pt-2">
+        <button
+          onClick={onBack}
+          className="inline-flex items-center gap-2 rounded-2xl border px-5 py-3 font-semibold text-black"
+        >
+          <ChevronLeft size={18} />
+          Back
+        </button>
+
+        <button
+          onClick={onNext}
+          className="inline-flex items-center gap-2 rounded-2xl bg-[#722F37] px-6 py-3 font-semibold text-white"
+        >
+          Continue
+          <ChevronRight size={18} />
+        </button>
+      </div>
     </section>
   );
 }
+
+
 
