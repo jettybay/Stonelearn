@@ -31,7 +31,7 @@ export function LogoStep({ onBack, onNext }: Props) {
   };
 
   return (
-    <div className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm lg:p-10">
+<div className="rounded-[32px] border border-[#5E252C]/20 bg-white p-8 shadow-sm lg:p-10">
       <div>
         <span className="text-sm font-semibold text-[#722F37]">
           Step 4 of 6
@@ -41,7 +41,7 @@ export function LogoStep({ onBack, onNext }: Props) {
           Upload School Logo
         </h1>
 
-        <p className="mt-3 text-slate-600">
+<p className="mt-3 text-[#1A1A1A]/80">
           Add your school logo to personalize your Stonelearn workspace.
         </p>
       </div>
@@ -63,7 +63,7 @@ export function LogoStep({ onBack, onNext }: Props) {
 
               <p className="mt-4 font-medium">Upload School Logo</p>
 
-              <p className="mt-2 text-sm text-slate-500">
+<p className="mt-2 text-sm text-black/70">
                 PNG, JPG or SVG
               </p>
             </>
@@ -85,7 +85,7 @@ export function LogoStep({ onBack, onNext }: Props) {
           <p className="font-medium">Logo Guidelines</p>
         </div>
 
-        <ul className="mt-3 space-y-2 text-sm text-slate-600">
+<ul className="mt-3 space-y-2 text-sm text-black/80">
           <li>• Square logos work best</li>
           <li>• Transparent PNG recommended</li>
           <li>• Maximum size: 5MB</li>

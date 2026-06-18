@@ -1,10 +1,8 @@
-# TODO
+# Project TODO
 
-## Onboarding flow updates
-- [x] Update onboarding step ids/types and ONBOARDING_STEPS order to: school-information (school-details) -> subdomain -> branding -> logo -> admin -> review
-- [x] Replace placeholder LogoStep with the requested LogoStep implementation (props onBack?/onNext?)
-- [x] Update onboarding navigation logic in app/Auth/Signup/page.tsx so branding Continue goes to logo (not review) and the full chain works: school-details -> subdomain -> branding -> logo -> admin-details -> review
-- [x] Wire Continue/Back navigation for subdomain, admin, and review steps (add props and buttons)
-- [x] Verify TypeScript/build and that onboarding can advance through all steps
+- [x] Build onboarding admin-step.tsx with required fields + validation + payload
+- [x] Build onboarding review-step.tsx to display checklist sections: School Information, Subdomain, Branding, Logo, Admin and final CTA: Launch School
+- [x] Update onboarding types.ts to include Admin data + review payload types (if needed)
+- [ ] Run lint/build to ensure TypeScript passes
 
 

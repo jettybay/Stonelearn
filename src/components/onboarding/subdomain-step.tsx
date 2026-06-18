@@ -27,7 +27,7 @@ export function SubdomainStep({ onBack, onNext }: Props) {
           />
           <span className="text-sm font-semibold text-black/70">.stonelearn.app</span>
         </div>
-        <div className="text-xs text-black/50">
+<div className="text-sm text-black/70">
           Only letters, numbers, and hyphens are recommended.
         </div>
       </label>

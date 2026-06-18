@@ -43,7 +43,7 @@ export function AdminStep({ onBack, onNext }: Props) {
         </label>
       </div>
 
-      <div className="rounded-2xl border border-black/10 bg-black/[0.02] p-4 text-sm text-black/70">
+<div className="rounded-2xl border border-black/10 bg-black/[0.02] p-4 text-sm text-black/80">
         You can invite additional admins after the workspace is created.
       </div>
 
