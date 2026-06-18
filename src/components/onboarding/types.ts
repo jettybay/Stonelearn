@@ -12,6 +12,7 @@ export type OnboardingStep = {
   description: string;
 };
 
+
 export const ONBOARDING_STEPS: OnboardingStep[] = [
   {
     id: "school-details",
