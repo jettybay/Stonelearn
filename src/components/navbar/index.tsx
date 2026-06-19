@@ -113,12 +113,12 @@ export function Navbar() {
             Login
           </button>
           
-          <Link 
+          {/* <Link 
             href="/Auth/Signup"
             className="hidden sm:block rounded-xl bg-[#722F37] px-6 py-2 font-medium text-white hover:bg-[#722F37]/90 transition-all shadow-lg shadow-[#722F37]/20 active:scale-95 text-center"
           >
             Get Started
-          </Link>
+          </Link> */}
 
 
           <button 

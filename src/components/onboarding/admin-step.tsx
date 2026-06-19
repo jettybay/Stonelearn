@@ -95,7 +95,7 @@ export function AdminStep({ onBack, onNext }: Props) {
             value={form.firstName}
             onChange={(e) => setField("firstName", e.target.value)}
             onBlur={() => setTouched((p) => ({ ...p, firstName: true }))}
-            className="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm outline-none focus:border-[#722F37] focus:ring-2 focus:ring-[#722F37]/10"
+            className="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-black placeholder:text-slate-400 outline-none focus:border-[#722F37] focus:ring-2 focus:ring-[#722F37]/10"
             placeholder="e.g. Amina"
           />
           {touched.firstName && errors.firstName && (
@@ -109,7 +109,7 @@ export function AdminStep({ onBack, onNext }: Props) {
             value={form.lastName}
             onChange={(e) => setField("lastName", e.target.value)}
             onBlur={() => setTouched((p) => ({ ...p, lastName: true }))}
-            className="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm outline-none focus:border-[#722F37] focus:ring-2 focus:ring-[#722F37]/10"
+            className="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-black placeholder:text-slate-400 outline-none focus:border-[#722F37] focus:ring-2 focus:ring-[#722F37]/10"
             placeholder="e.g. Johnson"
           />
           {touched.lastName && errors.lastName && (
@@ -124,7 +124,7 @@ export function AdminStep({ onBack, onNext }: Props) {
             value={form.email}
             onChange={(e) => setField("email", e.target.value)}
             onBlur={() => setTouched((p) => ({ ...p, email: true }))}
-            className="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm outline-none focus:border-[#722F37] focus:ring-2 focus:ring-[#722F37]/10"
+            className="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-black placeholder:text-slate-400 outline-none focus:border-[#722F37] focus:ring-2 focus:ring-[#722F37]/10"
             placeholder="admin@school.com"
           />
           {touched.email && errors.email && (
@@ -138,7 +138,7 @@ export function AdminStep({ onBack, onNext }: Props) {
             value={form.phone}
             onChange={(e) => setField("phone", e.target.value)}
             onBlur={() => setTouched((p) => ({ ...p, phone: true }))}
-            className="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm outline-none focus:border-[#722F37] focus:ring-2 focus:ring-[#722F37]/10"
+            className="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-black placeholder:text-slate-400 outline-none focus:border-[#722F37] focus:ring-2 focus:ring-[#722F37]/10"
             placeholder="e.g. +234 801 234 5678"
           />
           {touched.phone && errors.phone && (
@@ -153,7 +153,7 @@ export function AdminStep({ onBack, onNext }: Props) {
             value={form.password}
             onChange={(e) => setField("password", e.target.value)}
             onBlur={() => setTouched((p) => ({ ...p, password: true }))}
-            className="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm outline-none focus:border-[#722F37] focus:ring-2 focus:ring-[#722F37]/10"
+            className="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-black placeholder:text-slate-400 outline-none focus:border-[#722F37] focus:ring-2 focus:ring-[#722F37]/10"
             placeholder="Create a password"
           />
           {touched.password && errors.password && (
@@ -168,7 +168,7 @@ export function AdminStep({ onBack, onNext }: Props) {
             value={form.confirmPassword}
             onChange={(e) => setField("confirmPassword", e.target.value)}
             onBlur={() => setTouched((p) => ({ ...p, confirmPassword: true }))}
-            className="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm outline-none focus:border-[#722F37] focus:ring-2 focus:ring-[#722F37]/10"
+            className="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-black placeholder:text-slate-400 outline-none focus:border-[#722F37] focus:ring-2 focus:ring-[#722F37]/10"
             placeholder="Re-enter password"
           />
           {touched.confirmPassword && errors.confirmPassword && (

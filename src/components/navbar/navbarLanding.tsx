@@ -51,10 +51,10 @@ export function NavbarLanding() {
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-        <div className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3">
           <div className="h-9 w-9 rounded-xl bg-[#722F37]" />
           <span className="text-xl font-bold text-[#722F37]">Stonelearn</span>
-        </div>
+        </Link>
 
         <nav className='hidden md:flex items-center gap-8'>
           <div className='relative' ref={dropdownRef}>

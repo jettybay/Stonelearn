@@ -44,7 +44,7 @@ export function SubdomainStep({ onBack, onNext }: Props) {
             autoComplete="off"
             spellCheck={false}
             placeholder="your-school"
-            className="flex-1 rounded-lg bg-[#722F37]/10 px-3 py-2 text-sm text-black outline-none placeholder:text-black/60 focus:ring-2 focus:ring-[#722F37]/20"
+            className="flex-1 rounded-lg bg-[#722F37]/10 px-3 py-2 text-sm text-black outline-none placeholder:text-slate-500 focus:ring-2 focus:ring-[#722F37]/20"
           />
 
           <span className="text-sm font-semibold text-black/70">.stonelearn.app</span>
