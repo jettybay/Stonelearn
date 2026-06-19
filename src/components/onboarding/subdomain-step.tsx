@@ -40,7 +40,7 @@ export function SubdomainStep({ onBack, onNext }: Props) {
             <li>School-specific admin area</li>
           </ul>
         </div>
-        <div className="rounded-2xl border border-black/10 bg-white p-4">
+        <div className="rounded-2xl border border-black/10 bg-red-50 p-4">
           <div className="text-sm font-semibold text-black">Preview</div>
           <div className="mt-2 text-sm text-black/60">your-school.stonelearn.app</div>
         </div>
