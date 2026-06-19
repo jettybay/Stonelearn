@@ -1,13 +1,12 @@
 "use client";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useMemo, useState } from "react";
 
 type Props = {
   onBack?: () => void;
-  onNext?: () => void;
+  onNext?: (subdomain: string) => void;
 };
-
-import { useMemo, useState } from "react";
 
 export function SubdomainStep({ onBack, onNext }: Props) {
   const [subdomain, setSubdomain] = useState("");
@@ -81,7 +80,7 @@ export function SubdomainStep({ onBack, onNext }: Props) {
         </button>
 
         <button
-          onClick={() => onNext?.()}
+          onClick={() => onNext?.(subdomain)}
           className="inline-flex items-center gap-2 rounded-2xl bg-[#722F37] px-6 py-3 font-semibold text-white"
         >
           Continue
