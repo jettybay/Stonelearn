@@ -56,7 +56,7 @@ export function Features() {
                 {feature.title}
               </h3>
 
-              <p className="mt-3 text-gray-600">
+              <p className="mt-3 text-black">
                 {feature.description}
               </p>
             </div>

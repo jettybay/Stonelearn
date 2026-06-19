@@ -33,7 +33,7 @@ export function Stats() {
                 {stat.value}
               </h3>
 
-              <p className="mt-2 text-gray-500">
+              <p className="mt-2 text-black">
                 {stat.label}
               </p>
             </div>

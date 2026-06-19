@@ -1,26 +1,70 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MobileMenu } from "./mobile-menu";
 
 export function Navbar() {
   const [isFeaturesOpen, setIsFeaturesOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const categories = [
-    { name: "Edutech", href: "/categories/edutech" },
-    { name: "Fintech", href: "/categories/fintech" },
-    { name: "Healthtech", href: "/categories/healthtech" },
-    { name: "E-commerce", href: "/categories/ecommerce" },
-  ];
+  // Dynamic dropdown items based on current route
+  // (category landing pages)
+  // Note: using "wine" primary color for dropdown text.
+  const pathname = typeof window !== "undefined" ? window.location.pathname : "";
+
+  const featureItems = (() => {
+    if (pathname.includes("/categories/edutech")) {
+      return ["Schools", "CBT", "Quizzes", "Examinations"].map((label) => ({
+        label,
+        href: pathname,
+      }));
+    }
+
+    if (pathname.includes("/categories/ecommerce")) {
+      return ["Mall", "Supermarket", "Store"].map((label) => ({
+        label,
+        href: pathname,
+      }));
+    }
+
+    if (pathname.includes("/categories/healthtech")) {
+      return ["Hospital", "Pharmacy", "Laboratory", "Fitness"].map((label) => ({
+        label,
+        href: pathname,
+      }));
+    }
+
+    if (pathname.includes("/categories/fintech")) {
+      return [
+        "Regular Finance",
+        "Micro-finance",
+        "Co-operative",
+        "Audit",
+        "Payment management",
+        "e-Ticket",
+      ].map((label) => ({
+        label,
+        href: pathname,
+      }));
+    }
+
+    // Fallback (when not on category pages)
+    return [
+      { label: "Edutech", href: "/categories/edutech" },
+      { label: "Fintech", href: "/categories/fintech" },
+      { label: "Healthtech", href: "/categories/healthtech" },
+      { label: "E-commerce", href: "/categories/ecommerce" },
+    ];
+  })();
+
 
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-3">
           <div className="h-9 w-9 rounded-xl bg-[#722F37]" />
-          <span className="text-xl font-bold">
+          <span className="text-xl font-bold text-[#722F37]">
             Stonelearn
           </span>
         </Link>
@@ -31,7 +75,7 @@ export function Navbar() {
             onMouseEnter={() => setIsFeaturesOpen(true)}
             onMouseLeave={() => setIsFeaturesOpen(false)}
           >
-            <button className="flex items-center gap-1 hover:text-[#722F37] transition-colors py-2 font-medium">
+            <button className="flex items-center gap-1 text-[#722F37] transition-colors py-2 font-medium">
               Features
               <ChevronDown size={14} className={`transition-transform duration-200 ${isFeaturesOpen ? 'rotate-180' : ''}`} />
             </button>
@@ -44,33 +88,110 @@ export function Navbar() {
                   exit={{ opacity: 0, y: 10 }}
                   className="absolute left-0 top-[calc(100%-10px)] w-48 rounded-xl bg-white border shadow-xl py-2 z-50"
                 >
-                  {categories.map((cat) => (
-                    <Link 
-                      key={cat.href} 
-                      href={cat.href}
-                      className="block px-4 py-2.5 text-sm font-medium hover:bg-gray-50 hover:text-[#722F37] transition-colors"
+                  {featureItems.map((item) => (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      className="block px-4 py-2.5 text-sm font-medium transition-colors"
+                      style={{ color: "#722F37" }}
+                      onClick={() => setIsFeaturesOpen(false)}
                     >
-                      {cat.name}
+                      {item.label}
                     </Link>
                   ))}
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
-          <a href="#how-it-works">How It Works</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#contact">Contact</a>
+          <a href="#how-it-works" className="text-[#722F37] font-medium transition-colors">How It Works</a>
+          <a href="#pricing" className="text-[#722F37] font-medium transition-colors">Pricing</a>
+          <a href="#contact" className="text-[#722F37] font-medium transition-colors">Contact</a>
         </nav>
 
-        <div className="flex gap-3">
-          <button className="rounded-xl border px-5 py-2">Login</button>
-         
-
-          <MobileMenu />
-
+        <div className="flex items-center gap-3">
+          <button className="hidden sm:block rounded-xl border border-[#722F37] px-5 py-2 font-medium text-[#722F37] hover:bg-[#722F37]/5 transition-colors">
+            Login
+          </button>
           
+          <Link 
+            href="/Auth/Signup"
+            className="hidden sm:block rounded-xl bg-[#722F37] px-6 py-2 font-medium text-white hover:bg-[#722F37]/90 transition-all shadow-lg shadow-[#722F37]/20 active:scale-95 text-center"
+          >
+            Get Started
+          </Link>
+
+
+          <button 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden p-2 text-black hover:bg-gray-100 rounded-lg transition-colors"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden border-t bg-white overflow-hidden shadow-lg"
+          >
+            <div className="flex flex-col gap-2 p-6">
+              <div className="space-y-1">
+                <button 
+                  onClick={() => setIsFeaturesOpen(!isFeaturesOpen)}
+                  className="flex w-full items-center justify-between py-2 font-medium text-left text-[#722F37] transition-colors"
+                >
+                  Features
+                  <ChevronDown size={16} className={`transition-transform duration-200 ${isFeaturesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                <AnimatePresence>
+                  {isFeaturesOpen && (
+                    <motion.div 
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="pl-4 space-y-1 overflow-hidden"
+                    >
+                      {featureItems.map((item) => (
+                        <Link
+                          key={item.label}
+                          href={item.href}
+                          className="block py-2 text-sm transition-colors"
+                          style={{ color: "#722F37" }}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+              <a href="#how-it-works" className="py-2 font-medium text-[#722F37] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>How It Works</a>
+              <a href="#pricing" className="py-2 font-medium text-[#722F37] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Pricing</a>
+              <a href="#contact" className="py-2 font-medium text-[#722F37] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
+              <div className="flex flex-col gap-3 pt-4">
+                <button className="w-full rounded-xl border border-[#722F37] py-3.5 font-bold text-[#722F37] active:scale-95 transition-all">
+                  Login
+                </button>
+                <Link 
+                  href="/Auth/Signup"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="w-full rounded-xl bg-[#722F37] py-3.5 font-bold text-white shadow-lg shadow-[#722F37]/20 active:scale-95 transition-all text-center"
+                >
+                  Get Started
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

@@ -16,7 +16,7 @@ export default function Page() {
     <main className="overflow-hidden bg-white">
       <NavbarLanding />
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center">
+      <section className="relative min-h-screen flex items-center py-20 lg:py-0">
         {/* Background */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-[-200px] right-[-200px] w-[700px] h-[700px] rounded-full bg-[#722F37]/10 blur-3xl" />
@@ -103,7 +103,7 @@ export default function Page() {
                   repeat: Infinity,
                   duration: 5,
                 }}
-                className="absolute -top-10 -left-10 bg-white shadow-2xl rounded-3xl p-5 border z-20"
+                className="absolute -top-10 left-4 md:-left-10 bg-white shadow-2xl rounded-3xl p-5 border z-20"
               >
                 <div className="flex items-center gap-4">
                   <ShieldCheck
@@ -187,7 +187,7 @@ export default function Page() {
                   repeat: Infinity,
                   duration: 4,
                 }}
-                className="absolute -bottom-10 right-0 bg-white border shadow-xl rounded-2xl px-6 py-4"
+                className="absolute -bottom-10 right-4 md:right-0 bg-white border shadow-xl rounded-2xl px-6 py-4"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-full bg-[#722F37]/10 flex items-center justify-center">

@@ -1,9 +1,13 @@
 # TODO
-- [ ] Create app routes for /categories/[slug] (or move existing pages into app/) so Next.js can render them instead of 404.
-- [ ] Fix navbar links to match the actual route paths.
-- [ ] Confirm Next.js app router is used: ensure folders live under `app/categories/...` not `src/categories/...`.
 
-- [x] Fix TypeScript build error in src/components/navbar/navbarLanding.tsx (remove unused React import).
+## Done
+- Updated `src/components/onboarding/subdomain-step.tsx`:
+  - Subdomain input now has wine-tinted background (`#722F37`) and black text/placeholder styling.
+  - Input is controlled and updates the preview dynamically.
+  - Preview card updated from red styling to wine-tinted professional style.
+  - Preview shows `https://{subdomain}.stonelearn.app` and falls back to `https://your-school.stonelearn.app`.
 
-- [ ] Run `npm run build` and verify routes load.
+## Remaining
+- If required by the design system request: apply similar wine + black placeholder/input styling to other onboarding steps/pages (branding/logo/admin/review) and any signup/review UI.
+- Optional: handle empty-state more gracefully and add validation UI for the allowed subdomain character set.
 

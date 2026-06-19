@@ -28,7 +28,7 @@ export function FAQItem({
       </button>
       <div
         id={id}
-        className={"mt-4 text-gray-600 transition-all " + (open ? "block" : "hidden")}
+        className={"mt-4 text-black transition-all " + (open ? "block" : "hidden")}
       >
         {answer}
       </div>
