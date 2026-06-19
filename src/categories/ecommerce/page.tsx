@@ -38,7 +38,7 @@ export default function EcommercePage() {
                 Retail & E-commerce Training
               </span>
 
-              <h1 className="mt-6 text-5xl font-extrabold leading-tight tracking-tight lg:text-7xl">
+              <h1 className="mt-6 text-2xl font-extrabold leading-tight tracking-tight lg:text-7xl text-[#722F37]">
                 The Training Platform Built For E-commerce
               </h1>
 
@@ -54,7 +54,7 @@ export default function EcommercePage() {
                   Start Free Trial
                 </button>
 
-                <button className="rounded-xl border px-8 py-4 font-semibold">
+                <button className="rounded-xl border px-8 py-4 font-semibold text-gray-600">
                   Watch Demo
                 </button>
 
@@ -177,11 +177,11 @@ export default function EcommercePage() {
             title="Simple Pricing For Every Institution"
           />
 
-          <div className="mt-16 grid gap-8 lg:grid-cols-3">
+            <div className="mt-16 grid gap-8 lg:grid-cols-3 text-gray-700">
 
             <PricingCard
               name="Starter"
-              price="$29"
+              price="100,000CFA"
               description="Perfect for small businesses."
               features={[
                 "500 Students",
@@ -193,7 +193,7 @@ export default function EcommercePage() {
 
             <PricingCard
               name="Growth"
-              price="$99"
+              price="150,000CFA"
               description="Most popular choice."
               highlighted
               features={[

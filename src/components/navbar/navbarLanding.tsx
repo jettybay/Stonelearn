@@ -61,7 +61,7 @@ export function NavbarLanding() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`flex items-center gap-1 font-medium transition-colors py-2 focus:outline-none ${
-                isOpen ? "text-[#722F37]" : "text-gray-600 hover:text-[#722F37]"
+                isOpen ? "text-[#722F37]" : "text-gray-800 hover:text-[#722F37]"
               }`}>
               Categories
               <ChevronDown
@@ -107,12 +107,12 @@ export function NavbarLanding() {
             <button className="rounded-xl border border-[#722F37]/20 px-5 py-2 text-[#722F37] hover:bg-gray-50 transition">
               Login
             </button>
-            <Link 
+            {/* <Link 
               href="/Auth/Signup"
               className="rounded-xl bg-[#722F37] px-6 py-2 text-white hover:bg-[#722F37]/90 transition text-center"
             >
               Get Started
-            </Link>
+            </Link> */}
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -162,13 +162,13 @@ export function NavbarLanding() {
                 <button className="w-full rounded-xl border border-[#722F37]/20 py-4 font-bold text-[#722F37]">
                   Login
                 </button>
-                <Link 
+                {/* <Link 
                   href="/Auth/Signup"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="w-full rounded-xl bg-[#722F37] py-4 font-bold text-white shadow-lg shadow-[#722F37]/20 text-center"
                 >
                   Get Started
-                </Link>
+                </Link> */}
               </div>
             </div>
           </motion.div>

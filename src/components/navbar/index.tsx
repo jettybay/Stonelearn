@@ -180,13 +180,13 @@ export function Navbar() {
                 <button className="w-full rounded-xl border border-[#722F37] py-3.5 font-bold text-[#722F37] active:scale-95 transition-all">
                   Login
                 </button>
-                <Link 
+                {/* <Link 
                   href="/Auth/Signup"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="w-full rounded-xl bg-[#722F37] py-3.5 font-bold text-white shadow-lg shadow-[#722F37]/20 active:scale-95 transition-all text-center"
                 >
                   Get Started
-                </Link>
+                </Link> */}
               </div>
             </div>
           </motion.div>

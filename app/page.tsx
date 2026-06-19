@@ -33,7 +33,7 @@ export default function Page() {
               transition={{ duration: 0.7 }}
             >
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#722F37]/10 text-[#722F37] font-medium mb-8">
+              <div className="inline-flex mt-2 items-center gap-2 px-4 py-2 rounded-full bg-[#722F37]/10 text-[#722F37] font-medium mb-8">
                 <CheckCircle2 size={16} />
                 Trusted by 500+ Businesses
               </div>
@@ -112,7 +112,7 @@ export default function Page() {
                   />
 
                   <div>
-                    <h4 className="font-semibold">
+                    <h4 className="font-semibold text-gray-600">
                       Enterprise Security
                     </h4>
                     <p className="text-sm text-gray-500">
@@ -127,7 +127,7 @@ export default function Page() {
                 <div className="bg-white rounded-[35px] p-8">
                   {/* Top Bar */}
                   <div className="flex justify-between items-center mb-8">
-                    <h3 className="font-bold text-xl">
+                    <h3 className="font-bold text-xl text-gray-600">
                       Business Overview
                     </h3>
 
@@ -146,7 +146,7 @@ export default function Page() {
                       <p className="text-gray-500 text-sm">
                         Customers
                       </p>
-                      <h4 className="text-3xl font-bold">
+                      <h4 className="text-3xl font-bold text-[#722F37]">
                         12,845
                       </h4>
                     </div>
@@ -159,8 +159,8 @@ export default function Page() {
                       <p className="text-gray-500 text-sm">
                         Revenue
                       </p>
-                      <h4 className="text-3xl font-bold">
-                        $248K
+                      <h4 className="text-3xl font-bold text-[#722F37]">
+                        248K CFA
                       </h4>
                     </div>
                   </div>
@@ -195,7 +195,7 @@ export default function Page() {
                   </div>
 
                   <div>
-                    <h4 className="font-bold text-lg">
+                    <h4 className="font-bold text-lg text-red-800">
                       +38%
                     </h4>
                     <p className="text-gray-500 text-sm">
