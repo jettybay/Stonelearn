@@ -109,7 +109,7 @@ export function SchoolInformationStep({
               )
             }
             placeholder="Greenfield Academy"
-            className="h-14 w-full rounded-2xl border border-slate-300 px-4 outline-none transition focus:border-[#722F37]"
+            className="h-14 w-full rounded-2xl border border-slate-300 px-4 text-black placeholder:text-slate-400 outline-none transition focus:border-[#722F37]"
           />
         </div>
 
@@ -192,7 +192,7 @@ export function SchoolInformationStep({
                 )
               }
               placeholder="Nigeria"
-              className={`h-14 w-full rounded-2xl border border-slate-300 px-4 outline-none transition focus:border-[#722F37] ${
+              className={`h-14 w-full rounded-2xl border border-slate-300 px-4 placeholder:text-slate-400 outline-none transition focus:border-[#722F37] ${
                 form.country ? "font-bold text-[#722F37]" : "text-slate-900"
               }`}
             />
@@ -217,7 +217,7 @@ export function SchoolInformationStep({
               )
             }
             placeholder="Lagos"
-            className={`h-14 w-full rounded-2xl border border-slate-300 px-4 outline-none transition focus:border-[#722F37] ${
+            className={`h-14 w-full rounded-2xl border border-slate-300 px-4 placeholder:text-slate-400 outline-none transition focus:border-[#722F37] ${
               form.state ? "font-bold text-[#722F37]" : "text-slate-900"
             }`}
           />
@@ -240,7 +240,7 @@ export function SchoolInformationStep({
               )
             }
             placeholder="https://school.edu"
-            className="h-14 w-full rounded-2xl border border-slate-300 px-4 outline-none transition focus:border-[#722F37]"
+            className="h-14 w-full rounded-2xl border border-slate-300 px-4 text-black placeholder:text-slate-400 outline-none transition focus:border-[#722F37]"
           />
         </div>
 

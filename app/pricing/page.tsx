@@ -7,8 +7,8 @@ const institutionTypes = [
   "Primary School",
   "Secondary School",
   "Tertiary Institution",
-  "Business",
-  "Hospital",
+  // "Business",
+  // "Hospital",
 ];
 
 const billingPeriods = [

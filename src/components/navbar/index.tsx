@@ -62,7 +62,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="#" className="flex items-center gap-3">
           <div className="h-9 w-9 rounded-xl bg-[#722F37]" />
           <span className="text-xl font-bold text-[#722F37]">
             Stonelearn
@@ -113,12 +113,12 @@ export function Navbar() {
             Login
           </button>
           
-          <Link 
+          {/* <Link 
             href="/Auth/Signup"
             className="hidden sm:block rounded-xl bg-[#722F37] px-6 py-2 font-medium text-white hover:bg-[#722F37]/90 transition-all shadow-lg shadow-[#722F37]/20 active:scale-95 text-center"
           >
             Get Started
-          </Link>
+          </Link> */}
 
 
           <button 
