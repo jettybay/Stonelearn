@@ -110,7 +110,7 @@ export function AdminStep({ onBack, onNext }: Props) {
             onChange={(e) => setField("lastName", e.target.value)}
             onBlur={() => setTouched((p) => ({ ...p, lastName: true }))}
             className="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm outline-none focus:border-[#722F37] focus:ring-2 focus:ring-[#722F37]/10"
-            placeholder="e.g. Yusuf"
+            placeholder="e.g. Johnson"
           />
           {touched.lastName && errors.lastName && (
             <p className="text-xs text-red-600">{errors.lastName}</p>

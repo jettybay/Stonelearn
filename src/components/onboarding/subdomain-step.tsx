@@ -7,7 +7,16 @@ type Props = {
   onNext?: () => void;
 };
 
+import { useMemo, useState } from "react";
+
 export function SubdomainStep({ onBack, onNext }: Props) {
+  const [subdomain, setSubdomain] = useState("");
+
+  const preview = useMemo(() => {
+    const v = subdomain.trim();
+    return v ? `https://${v}.stonelearn.app` : "https://your-school.stonelearn.app";
+  }, [subdomain]);
+
   return (
     <section className="space-y-6">
       <div>
@@ -19,15 +28,30 @@ export function SubdomainStep({ onBack, onNext }: Props) {
 
       <label className="space-y-2">
         <span className="text-sm font-medium text-black/80">Your subdomain</span>
+
         <div className="flex items-center gap-3 rounded-xl border border-black/10 bg-white px-4 py-3">
           <span className="text-sm font-semibold text-black/70">https://</span>
+
           <input
-            className="flex-1 bg-transparent text-sm outline-none"
+            value={subdomain}
+            onChange={(e) => {
+              const next = e.target.value;
+              // Allow only: letters, numbers, hyphens.
+              // Keep it permissive (don’t block paste mid-edit).
+              const cleaned = next.replace(/[^a-zA-Z0-9-]/g, "");
+              setSubdomain(cleaned);
+            }}
+            inputMode="text"
+            autoComplete="off"
+            spellCheck={false}
             placeholder="your-school"
+            className="flex-1 rounded-lg bg-[#722F37]/10 px-3 py-2 text-sm text-black outline-none placeholder:text-black/60 focus:ring-2 focus:ring-[#722F37]/20"
           />
+
           <span className="text-sm font-semibold text-black/70">.stonelearn.app</span>
         </div>
-<div className="text-sm text-black/70">
+
+        <div className="text-sm text-black/70">
           Only letters, numbers, and hyphens are recommended.
         </div>
       </label>
@@ -40,9 +64,10 @@ export function SubdomainStep({ onBack, onNext }: Props) {
             <li>School-specific admin area</li>
           </ul>
         </div>
-        <div className="rounded-2xl border border-black/10 bg-red-50 p-4">
+
+        <div className="rounded-2xl border border-black/10 bg-[#722F37]/5 p-4">
           <div className="text-sm font-semibold text-black">Preview</div>
-          <div className="mt-2 text-sm text-black/60">your-school.stonelearn.app</div>
+          <div className="mt-2 truncate text-sm text-black/70">{preview}</div>
         </div>
       </div>
 
@@ -56,7 +81,7 @@ export function SubdomainStep({ onBack, onNext }: Props) {
         </button>
 
         <button
-          onClick={onNext}
+          onClick={() => onNext?.()}
           className="inline-flex items-center gap-2 rounded-2xl bg-[#722F37] px-6 py-3 font-semibold text-white"
         >
           Continue

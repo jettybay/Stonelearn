@@ -17,11 +17,14 @@ export function BrandingStep({ onNext }: Props) {
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <label className="space-y-2">
-          <span className="text-sm font-medium text-black/80">Primary color</span>
+          <span className="text-sm font-bold text-black/100">School color</span>
+          <p className="text-sm text-black/60">
+            Click the color to choose your school color.
+          </p>
           <input
             type="color"
             defaultValue="#722F37"
-            className="h-12 w-full cursor-pointer rounded-xl border border-black/10 bg-white p-1"
+            className="h-12 w-12 cursor-pointer rounded-xl border border-black/10 bg-white p-1"
           />
         </label>
 
