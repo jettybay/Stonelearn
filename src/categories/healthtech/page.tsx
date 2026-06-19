@@ -38,7 +38,7 @@ export default function HealthtechPage() {
                 Healthcare Education Platform
               </span>
 
-              <h1 className="mt-6 text-5xl font-extrabold leading-tight tracking-tight lg:text-7xl">
+              <h1 className="mt-6 text-2xl font-extrabold leading-tight tracking-tight lg:text-7xl text-[#722F37]">
                 The Learning Platform Built For Modern Healthcare
               </h1>
 
@@ -54,7 +54,7 @@ export default function HealthtechPage() {
                   Start Free Trial
                 </button>
 
-                <button className="rounded-xl border px-8 py-4 font-semibold">
+                <button className="rounded-xl border px-8 py-4 font-semibold text-gray-600">
                   Watch Demo
                 </button>
 
@@ -177,11 +177,11 @@ export default function HealthtechPage() {
             title="Simple Pricing For Every Institution"
           />
 
-          <div className="mt-16 grid gap-8 lg:grid-cols-3">
+          <div className="mt-16 grid gap-8 lg:grid-cols-3 text-gray-700">
 
             <PricingCard
               name="Starter"
-              price="$29"
+              price="100,000CFA"
               description="Perfect for small clinics."
               features={[
                 "500 Students",
@@ -193,7 +193,7 @@ export default function HealthtechPage() {
 
             <PricingCard
               name="Growth"
-              price="$99"
+              price="150,000CFA"
               description="Most popular choice."
               highlighted
               features={[
@@ -263,7 +263,7 @@ export default function HealthtechPage() {
 
           <div className="rounded-[32px] bg-[#722F37] p-16 text-center text-white">
 
-            <h2 className="text-5xl font-bold">
+            <h2 className="text-3xl font-bold">
               Ready To Launch Your Healthtech LMS?
             </h2>
 
