@@ -713,14 +713,6 @@ export default function PricingPage() {
           }}>
           {plans.map(plan => {
             const selected = isSelected(plan.name);
-            const planBaseRate =
-              plan.name === "ENTERPRISE" ? enterpriseBaseRate : plan.baseRate;
-            const planRate = planBaseRate * storage;
-            const planBase = students * planRate * currentBilling.multiplier;
-            const planCharge = parseFloat(
-              (planBase * plan.chargeRate).toFixed(2),
-            );
-            const planTotal = planBase + planCharge;
 
             const availableFeatures = features.filter(
               f => f.availability[plan.name],

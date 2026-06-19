@@ -1,3 +1,7 @@
+
+
+import Link from "next/link";
+
 export function PricingCard({
   name,
   price,
@@ -58,7 +62,18 @@ export function PricingCard({
       >
         {cta}
       </button>
+
+      <Link
+        href="/pricing"
+        className={
+          "mt-4 block w-full rounded-xl px-5 py-3 text-center font-semibold transition " +
+          (highlighted
+            ? "bg-[#722F37] text-white hover:opacity-90"
+            : "border bg-white text-[#722F37] hover:bg-gray-50")
+        }
+      >
+        More
+      </Link>
     </div>
   );
 }
-
