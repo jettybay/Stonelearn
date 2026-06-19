@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import {
-  ArrowRight,
+  // ArrowRight,
   ShieldCheck,
   Users,
   BarChart3,
@@ -54,10 +54,10 @@ export default function Page() {
 
               {/* Buttons */}
               <div className="flex flex-wrap gap-4 mt-10">
-                <button className="bg-[#722F37] hover:bg-[#5f262d] transition text-white px-8 py-4 rounded-xl font-semibold flex items-center gap-2">
+                {/* <button className="bg-[#722F37] hover:bg-[#5f262d] transition text-white px-8 py-4 rounded-xl font-semibold flex items-center gap-2">
                   Get Started
                   <ArrowRight size={18} />
-                </button>
+                </button> */}
 
                 <button className="border border-gray-300 px-8 py-4 rounded-xl font-semibold text-[#111111] hover:bg-gray-50 transition">
                   Book Demo
