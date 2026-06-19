@@ -1,8 +1,13 @@
-# Project TODO
+# TODO
 
-- [x] Build onboarding admin-step.tsx with required fields + validation + payload
-- [x] Build onboarding review-step.tsx to display checklist sections: School Information, Subdomain, Branding, Logo, Admin and final CTA: Launch School
-- [x] Update onboarding types.ts to include Admin data + review payload types (if needed)
-- [ ] Run lint/build to ensure TypeScript passes
+## Done
+- Updated `src/components/onboarding/subdomain-step.tsx`:
+  - Subdomain input now has wine-tinted background (`#722F37`) and black text/placeholder styling.
+  - Input is controlled and updates the preview dynamically.
+  - Preview card updated from red styling to wine-tinted professional style.
+  - Preview shows `https://{subdomain}.stonelearn.app` and falls back to `https://your-school.stonelearn.app`.
 
+## Remaining
+- If required by the design system request: apply similar wine + black placeholder/input styling to other onboarding steps/pages (branding/logo/admin/review) and any signup/review UI.
+- Optional: handle empty-state more gracefully and add validation UI for the allowed subdomain character set.
 
