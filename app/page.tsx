@@ -59,9 +59,7 @@ export default function Page() {
                   <ArrowRight size={18} />
                 </button> */}
 
-                <button className="border border-gray-300 px-8 py-4 rounded-xl font-semibold text-[#111111] hover:bg-gray-50 transition">
-                  Book Demo
-                </button>
+                
               </div>
 
               {/* Stats */}

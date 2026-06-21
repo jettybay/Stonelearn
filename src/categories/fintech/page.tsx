@@ -50,13 +50,13 @@ export default function FintechPage() {
 
               <div className="mt-10 flex flex-wrap gap-4">
 
-                <button className="rounded-xl bg-[#722F37] px-8 py-4 font-semibold text-white">
+                {/* <button className="rounded-xl bg-[#722F37] px-8 py-4 font-semibold text-white">
                   Start Free Trial
-                </button>
+                </button> */}
 
-                <button className="rounded-xl border px-8 py-4 font-semibold text-gray-600">
+                {/* <button className="rounded-xl border px-8 py-4 font-semibold text-gray-600">
                   Watch Demo
-                </button>
+                </button> */}
 
               </div>
 
@@ -278,9 +278,9 @@ export default function FintechPage() {
               Start building your digital training center today.
             </p>
 
-            <button className="mt-8 rounded-xl bg-white px-8 py-4 font-semibold text-[#722F37]">
+            {/* <button className="mt-8 rounded-xl bg-white px-8 py-4 font-semibold text-[#722F37]">
               Start Free Trial
-            </button>
+            </button> */}
 
           </div>
 
