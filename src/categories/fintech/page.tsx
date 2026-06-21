@@ -147,17 +147,24 @@ export default function FintechPage() {
         <div className="mx-auto max-w-7xl px-6">
 
           <SectionHeader
-            kicker="Multi-Tenant Branding"
+           kicker="Multi-Tenant Branding"
             title="Every Department Gets Its Own Identity"
             description="Switch between organizational themes instantly."
           />
 
           <div className="mt-10 flex justify-center">
-            <BrandingSwitcher />
-          </div>
+            <div className="rounded-2xl bg-[var(--brand-bg)] p-6">
+              <BrandingSwitcher />
 
-          <div className="mt-12">
-            <DashboardPreview />
+              <div className="mt-4">
+                <div className="text-sm font-semibold text-[var(--brand-primary)]">
+                  Branding Preview
+                </div>
+                <div className="mt-2 rounded-xl bg-[color-mix(in_oklab,var(--brand-primary),white_85%)] p-4 text-[var(--brand-primary)]">
+                  Your bank theme updates instantly.
+                </div>
+              </div>
+            </div>
           </div>
 
         </div>
