@@ -156,10 +156,7 @@ export default function EdutechPage() {
             <BrandingSwitcher />
           </div>
 
-          <div className="mt-12">
-            <DashboardPreview />
-          </div>
-
+    
         </div>
 
       </section>
