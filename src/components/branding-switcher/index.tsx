@@ -15,13 +15,25 @@ interface BrandingSwitcherProps {
 export function BrandingSwitcher({ onThemeChange }: BrandingSwitcherProps) {
   const [themeIndex, setThemeIndex] = useState(0);
 
+  const applyThemeToDocument = (theme: (typeof themes)[number]) => {
+    if (typeof document === "undefined") return;
+
+    document.documentElement.style.setProperty("--brand-primary", theme.primary);
+    document.documentElement.style.setProperty("--brand-bg", theme.bg);
+  };
+
   const handleThemeChange = (idx: number) => {
     setThemeIndex(idx);
-    onThemeChange?.(themes[idx]);
+    const theme = themes[idx];
+    applyThemeToDocument(theme);
+    onThemeChange?.(theme);
   };
+
+  applyThemeToDocument(themes[themeIndex]);
 
   return (
     <div className="flex items-center justify-center gap-3">
+
       <span className="text-sm font-medium text-gray-600">Brand</span>
       <div className="flex rounded-xl border bg-white p-1">
         {themes.map((t, idx) => (
@@ -35,7 +47,7 @@ export function BrandingSwitcher({ onThemeChange }: BrandingSwitcherProps) {
                 : "text-gray-600 hover:bg-gray-50"
             }`}
             style={{
-              "--brand-primary": t.primary,
+              backgroundColor: idx === themeIndex ? t.primary : undefined,
             } as CSSProperties}
           >
             {t.name}
